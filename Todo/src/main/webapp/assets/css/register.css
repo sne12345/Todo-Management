@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+
+header {
+	display: flex;
+	justify-content: center;
+	padding:40px;
+}
+
+header div {
+	font-weight: bold;
+	font-size: 40px;
+}
+
+section .question {
+	display: flex;
+	justify-content: center;
+}
+
+section #buttons {
+	display: flex;
+	justify-content: center;
+}
+
+#center {
+	display: flex;
+	justify-content: center;
+}
