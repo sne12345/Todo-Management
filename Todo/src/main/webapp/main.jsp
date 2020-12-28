@@ -1,6 +1,8 @@
 <%@ page import="kr.or.connect.jdbcRole.dto.Todo" %>
 <%@ page import="java.util.List" %>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
 <head>
@@ -10,7 +12,7 @@
 
 	<header>
 	
-		<form method="post" action="/Todo/register">
+		<form method="post" action="/Todo/todoform">
 			<input type="submit" value="Register new TODO"/>
 		</form>
 		
@@ -28,45 +30,46 @@
 		<%
 			
 			Todo todo = new Todo();
-			List<Todo> list = (List)request.getAttribute("list");
-
-		%>
-		<br />
-		
+			List<Todo> listTodo = (List)request.getAttribute("listTodo"); 
+			List<Todo> listDoing = (List)request.getAttribute("listDoing"); 
+			List<Todo> listDone = (List)request.getAttribute("listDone"); 
+			
+			%>
 		
 		<div id="content">
-			<ul>
-				<li>
-					<div>study javascript</div>
-					<div>date:2020.12.27, naeun, priority 1 <button>-></button></div>
-				</li>
-				<li>
-					<div>study javascript</div>
-					<div>date:2020.12.27, naeun, priority 1 <button>-></button></div>
-				</li>
+			<ul class="todo">
+				
+				<c:forEach var="item" items="${listTodo }" begin="0" >
+					<li>
+					<div>${item.title } </div>  <br />
+					<div>${item.regDate }, ${item.manager }, priority ${item.priority }  <button>-></button></div>
+					</li>
+				</c:forEach>
+				
 			</ul>
 			
-			<ul>
-				<li>
-					<div>study javascript</div>
-					<div>date:2020.12.27, naeun, priority 1 <button>-></button></div>
-				</li>
-				<li>
-					<div>study javascript</div>
-					<div>date:2020.12.27, naeun, priority 1 <button>-></button></div>
-				</li>
+			<ul class="doing">
+				
+				<c:forEach var="item" items="${listDoing }" begin="0" >
+					<li>
+					<div> ${item.title } </div> <br />
+					<div> ${item.regDate }, ${item.manager }, priority ${item.priority }  <button>-></button></div> 
+					</li>
+				</c:forEach>
+				
 			</ul>
-
-			<ul>
-				<li>
-					<div>study javascript</div>
-					<div>date:2020.12.27, naeun, priority 1 <button>-></button></div>
-				</li>
-				<li>
-					<div>study javascript</div>
-					<div>date:2020.12.27, naeun, priority 1 <button>-></button></div>
-				</li>
-			</ul> 
+			
+			<ul class="done">
+				
+				<c:forEach var="item" items="${listDone }" begin="0" >
+					<li>
+					<div> ${item.title } </div> <br />
+					<div> ${item.regDate }, ${item.manager }, priority ${item.priority } </div>
+					</li>
+				</c:forEach>
+				
+			</ul>
+	
 		</div>
 	
 	</section>

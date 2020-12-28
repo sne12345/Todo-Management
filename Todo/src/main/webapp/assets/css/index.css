@@ -1,24 +1,15 @@
 @charset "UTF-8";
 
-header #register {
+header {
+	display:flex;
+	justify-content: center;
+}
+
+header form {
+	
 	width: 100%;
 	height: 60px;
 }
-
-header #register div {
-	width: 20%;
-	height:30px;
-	background: #52aae8;
-	margin:  120px 10% 0 70%;
-	text-align: center;
-	padding: 12px 0 0 0;
-}
-
-header #register a {
-	color: white;
-	text-decoration: none;
-}
-
 
 
 #menu {
@@ -40,7 +31,7 @@ header #register a {
 	justify-content: center;
 }
 
-
+ 
 
 #content li {
 	list-style:none;
@@ -52,12 +43,20 @@ header #register a {
 }
 
 #content ul {
-	margin: 0px;
+	width: 320px;
 	padding: 0px;
+	
 }
 
-/* 
-#content li div:nth-child(2){
-	font-size: 12px;
+ 
+#content li div:nth-child(1){
+	font-size: 22px;
+	font-weight:bold;
 	margin: 5px 0px 0px 0px;
-} */
+} 
+
+
+#content li div:nth-child(2){
+	font-size: 6px;
+	margin: 5px 0px 0px 0px;
+} 

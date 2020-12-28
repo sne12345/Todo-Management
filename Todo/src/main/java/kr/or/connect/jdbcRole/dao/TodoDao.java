@@ -102,19 +102,22 @@ public class TodoDao {
 			e.printStackTrace();
 		}
 
-		String sql = "SELECT title, manager, priority FROM TODO order by priority desc";
+		String sql = "SELECT id, manager, regdate, priority, title, type FROM TODO order by type desc";
 		try (Connection conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
 				PreparedStatement ps = conn.prepareStatement(sql)) {
 
 			try (ResultSet rs = ps.executeQuery()) {
 
 				while (rs.next()) {
-					String title = rs.getString(1);
+					Integer id = rs.getInt(1);
 					String manager = rs.getString(2);
-					Integer priority = rs.getInt(3);
+					String regDate = rs.getString(3);
+					Integer priority = rs.getInt(4);
+					String title = rs.getString(5);
+					String type = rs.getString(6);
 					
-					Todo todo = new Todo(title, manager, priority);
-					list.add(todo); // list에 반복할때마다 Role인스턴스를 생성하여 list에 추가한다.
+					Todo todo = new Todo(id, manager, regDate, priority, title, type);
+					list.add(todo); // list에 반복할때마다 Todo인스턴스를 생성하여 list에 추가한다.
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
