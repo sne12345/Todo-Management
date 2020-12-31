@@ -31,7 +31,7 @@ public class TodoAddServlet extends HttpServlet {
 		Todo todo = new Todo(0, manager, "0", priority, title, "0");
 		TodoDao dao = new TodoDao();
 		
-		int insertCount = dao.addTodo(todo);
+		int insertCount = dao.addTodo(todo); 
 		System.out.println(insertCount);
 		
 		response.sendRedirect("/Todo/main");
