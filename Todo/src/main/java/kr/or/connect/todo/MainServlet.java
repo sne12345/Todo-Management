@@ -79,7 +79,6 @@ public class MainServlet extends HttpServlet {
 		TodoDao daoGet = new TodoDao();
 		List<Todo> list = daoGet.getTodos();
 		
-		
 		List<Todo> listTodo = new ArrayList<>();
 		List<Todo> listDoing = new ArrayList<>();
 		List<Todo> listDone = new ArrayList<>();

@@ -7,30 +7,34 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kr.or.connect.jdbcRole.dao.TodoDao;
+import kr.or.connect.jdbcRole.dto.Todo;
+
 @WebServlet("/todoadd")
 public class TodoAddServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     public TodoAddServlet() {
         super();
-        // TODO Auto-generated constructor stub
+        
     }
 
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
-
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		
+		request.setCharacterEncoding("utf-8");
+		String title = request.getParameter("title");
+		String manager = request.getParameter("manager");
+		String priorityTmp = request.getParameter("priority");
+		int priority = Integer.parseInt(priorityTmp);
+		
+		Todo todo = new Todo(0, manager, "0", priority, title, "0");
+		TodoDao dao = new TodoDao();
+		
+		int insertCount = dao.addTodo(todo);
+		System.out.println(insertCount);
+		
+		response.sendRedirect("/Todo/main");
 	}
 
 }
