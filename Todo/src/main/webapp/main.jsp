@@ -42,7 +42,15 @@
 				<c:forEach var="item" items="${listTodo }" begin="0" >
 					<li>
 					<div>${item.title } </div>  <br />
-					<div>${item.regDate }, ${item.manager }, priority ${item.priority }  <button>-></button></div>
+					<div>${item.regDate }, ${item.manager }, priority ${item.priority }  
+					
+						<form method="post" action="/Todo/todotype" >
+							<input type="hidden" name="id" value=${item.id }>
+							<input type="hidden" name="type" value="${item.type }">
+							<input type="submit" value="->">
+						</form>
+						
+					</div>
 					</li>
 				</c:forEach>
 				
@@ -53,7 +61,15 @@
 				<c:forEach var="item" items="${listDoing }" begin="0" >
 					<li>
 					<div> ${item.title } </div> <br />
-					<div> ${item.regDate }, ${item.manager }, priority ${item.priority }  <button>-></button></div> 
+					<div> ${item.regDate }, ${item.manager }, priority ${item.priority }  
+					
+						<form method="post" action="/Todo/todotype" >
+							<input type="hidden" name="id" value=${item.id }>
+							<input type="hidden" name="type" value="${item.type }">
+							<input type="submit" value="->">
+						</form>
+
+					</div> 
 					</li>
 				</c:forEach>
 				

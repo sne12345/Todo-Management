@@ -24,13 +24,11 @@ public class TodoDao {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
-			String sql = "UPDATE TODO set manager = ?, priority = ? where title = ?";
+			String sql = "UPDATE TODO set type = ? where id = ?";
 			ps = conn.prepareStatement(sql);
 		
-			ps.setString(1, todo.getManager());
-			ps.setInt(2, todo.getPriority());
-			ps.setString(3, todo.getTitle());
-			
+			ps.setString(1, todo.getType());
+			ps.setInt(2, todo.getId());
 
 			updateCount = ps.executeUpdate();	// insert, delete, update는 executeUpdate() 이용
 												// int type 변수에 결과 입력
@@ -102,7 +100,7 @@ public class TodoDao {
 			e.printStackTrace();
 		}
 
-		String sql = "SELECT id, manager, regdate, priority, title, type FROM TODO order by type desc";
+		String sql = "SELECT id, manager, regdate, priority, title, type FROM TODO order by priority";
 		try (Connection conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
 				PreparedStatement ps = conn.prepareStatement(sql)) {
 
