@@ -33,4 +33,4 @@
 <img width="1093" alt="스크린샷 2021-01-03 오전 3 09 35" src="https://user-images.githubusercontent.com/51853700/103463643-25750000-4d71-11eb-8235-2d6792ce1059.png">
 
 # 할일등록 화면
-<img width="530" alt="스크린샷 2021-01-03 오전 3 10 39" src="https://user-images.githubusercontent.com/51853700/103463657-43dafb80-4d71-11eb-867d-5f285db86916.png">
+<img width="1092" alt="스크린샷 2021-01-03 오전 3 11 17" src="https://user-images.githubusercontent.com/51853700/103463664-59e8bc00-4d71-11eb-8aff-9332291f23cc.png">
