@@ -28,9 +28,15 @@
 - 변경 후, TodoTypeServlet -> main.jsp [리다이렉트] 
 
 
+# 2021.01.03
+- 할일등록 페이지에서 '이전', '내용지우기' 버튼에 기능을 추가함
+- '이전' 버튼은 onClick 기능 활용
+- '내용지우기' 버튼은 자바스크립트의 getElementById, addEventListener 기능 활용함
+
 
 # 메인 화면
 <img width="1093" alt="스크린샷 2021-01-03 오전 3 09 35" src="https://user-images.githubusercontent.com/51853700/103463643-25750000-4d71-11eb-8235-2d6792ce1059.png">
+
 
 # 할일등록 화면
 <img width="1092" alt="스크린샷 2021-01-03 오전 3 11 17" src="https://user-images.githubusercontent.com/51853700/103463664-59e8bc00-4d71-11eb-8aff-9332291f23cc.png">
