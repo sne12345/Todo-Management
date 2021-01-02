@@ -17,9 +17,9 @@ section .question {
 	justify-content: center;
 }
 
-section #buttons {
-	display: flex;
-	justify-content: center;
+section .buttons {
+	position:relative;
+	bottom:0px;
 }
 
 #center {

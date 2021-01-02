@@ -100,7 +100,7 @@ public class TodoDao {
 			e.printStackTrace();
 		}
 
-		String sql = "SELECT id, manager, regdate, priority, title, type FROM TODO order by priority";
+		String sql = "SELECT id, manager, regdate, priority, title, type FROM TODO";
 		try (Connection conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
 				PreparedStatement ps = conn.prepareStatement(sql)) {
 

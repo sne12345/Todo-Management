@@ -11,12 +11,19 @@
 <body>
 
 	<header>
-	
+		<div>
+			<button onClick="location.href='/Todo/todoform'">Register new TODO</button>
+		</div>
+	<!-- 
 		<form method="post" action="/Todo/todoform">
 			<input type="submit" value="Register new TODO"/>
-		</form>
+		</form> -->
 		
 	</header>
+	<br />
+	<br />
+	<br />
+	
 
 	<section>
 		<div id="menu">
